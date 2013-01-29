@@ -125,12 +125,12 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_Show_One_File = 1
 let Tlist_Inc_Winwidth = 0
-let Tlist_Ctags_Cmd = "vimctags"
+let Tlist_Ctags_Cmd = "ctags"
+nnoremap § :TlistToggle<cr>
 "}}}
 
 let NERDTreeIgnore = ['\.pyc$']
 
-"map <F8> :!vimctags -f ./tags -h ".php.tao" -R --exclude="\.svn" --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP="/abstract class ([^ ]*)/\1/c/" --regex-PHP="/interface ([^ ]*)/\1/c/" --regex-PHP="/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/"
 
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako,twig let b:closetag_html_style=1
 
@@ -138,9 +138,6 @@ autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bu
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-"Treat .tao files as php and .twig files as html
-au BufNewFile,BufRead *.tao set filetype=php
-au BufNewFile,BufRead *.twig set filetype=html
 
 " abbreviations
 ab dcm /**<CR> * @param <CR>* @return void<CR>*/<Esc><Up><Up>$i
