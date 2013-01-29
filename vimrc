@@ -92,8 +92,8 @@ noremap wq :wq
 imap <S-Tab> <Esc><<i
 
 " load closetag script
-:let g:closetag_html_style=1
-:source ~/.vim/scripts/closetag.vim
+":let g:closetag_html_style=1
+":source ~/.vim/scripts/closetag.vim
 
 " Remove all trailing whitespace from file and save
 noremap <C-S> :%s/\s\+$//g<CR>:w<CR>
@@ -104,3 +104,62 @@ nnoremap : ;
 
 noremap _ :ls<CR>:b
 
+" noremap dos :e ++ff=dos<CR>:w<CR>
+
+colorscheme molokai
+
+" set line number color
+highlight LineNr guifg=#666666
+highlight ColorColumn ctermbg=darkgrey guibg=#2f2f2f
+set colorcolumn=79
+set ruler
+
+" highlight things that we find with the search
+set hlsearch
+
+"{{{Taglist configuration
+let Tlist_Use_Right_Window = 1
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Highlight_Tag_On_BufEnter = 0
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_SingleClick = 1
+let Tlist_Show_One_File = 1
+let Tlist_Inc_Winwidth = 0
+let Tlist_Ctags_Cmd = "vimctags"
+"}}}
+
+let NERDTreeIgnore = ['\.pyc$']
+
+"map <F8> :!vimctags -f ./tags -h ".php.tao" -R --exclude="\.svn" --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP="/abstract class ([^ ]*)/\1/c/" --regex-PHP="/interface ([^ ]*)/\1/c/" --regex-PHP="/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/"
+
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako,twig let b:closetag_html_style=1
+
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+"Treat .tao files as php and .twig files as html
+au BufNewFile,BufRead *.tao set filetype=php
+au BufNewFile,BufRead *.twig set filetype=html
+
+" abbreviations
+ab dcm /**<CR> * @param <CR>* @return void<CR>*/<Esc><Up><Up>$i
+ab pubm /**<CR> * @param <CR>* @return void<CR>*/<CR><Backspace>public function()<CR>{<CR><CR>}<Esc>kkk%hi
+ab privar /**<CR> * @var <CR>*/<CR>private $
+ab provar /**<CR> * @var <CR>*/<CR>protected $
+ab pubvar /**<CR> * @var <CR>*/<CR>public $
+ab ip import ipdb; ipdb.set_trace()
+
+let g:dwm_map_keys=0
+
+" expand tabs to spaces
+set expandtab
+set novisualbell
+
+set guifont=Monospace\ 8
+
+" disable arrow keys in insert mode
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
