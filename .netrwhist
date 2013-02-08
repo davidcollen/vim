@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/dcollen/github_repos'
+let g:netrw_dirhist_2='/Users/dcollen/github_repos/oscar'
+let g:netrw_dirhist_3='/Users/dcollen/github_repos/oscar/django-oscar'
+let g:netrw_dirhist_4='/Users/dcollen'
+let g:netrw_dirhist_5='/Users/dcollen/Music'

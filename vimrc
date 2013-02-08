@@ -91,6 +91,10 @@ noremap wq :wq
 " invert tab in insert mode
 imap <S-Tab> <Esc><<i
 
+" Close tag in insert mode
+
+imap pp <C-R>=GetCloseTag()<CR>
+
 " load closetag script
 ":let g:closetag_html_style=1
 ":source ~/.vim/scripts/closetag.vim
@@ -160,3 +164,10 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
+
+" Call Flake 8 before write .py
+autocmd BufWritePost *.py call Flake8()
+let g:flake8_max_line_length=99
+let g:flake8_ignore="E128,E501,W293"
+let g:flake8_builtins="_,apply"
+
