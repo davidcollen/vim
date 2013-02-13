@@ -176,5 +176,6 @@ inoremap `` <ESC>:NERDTreeToggle<CR>
 nnoremap `` :NERDTreeToggle<CR>
 
 " NERDComment
-inoremap ~~ |NERDComToggleComment|
-noremap ~~ |NERDComToggleComment|
+imap ~~      <ESC><plug>NERDCommenterToggle
+nmap ~~      <plug>NERDCommenterToggle
+
