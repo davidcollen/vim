@@ -179,3 +179,4 @@ nnoremap `` :NERDTreeToggle<CR>
 imap ~~      <ESC><plug>NERDCommenterToggle
 nmap ~~      <plug>NERDCommenterToggle
 
+noremap 1§ :ConqueTermSplit bash
