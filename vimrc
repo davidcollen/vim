@@ -93,7 +93,7 @@ imap <S-Tab> <Esc><<i
 
 " Close tag in insert mode
 
-imap pp <C-R>=GetCloseTag()<CR>
+imap p[ <C-R>=GetCloseTag()<CR>
 
 " load closetag script
 ":let g:closetag_html_style=1
@@ -110,7 +110,7 @@ noremap _ :ls<CR>:b
 
 " noremap dos :e ++ff=dos<CR>:w<CR>
 
-colorscheme molokai
+colorscheme base16-monokai
 
 " set line number color
 highlight LineNr guifg=#666666
@@ -168,6 +168,13 @@ inoremap <Down>  <NOP>
 " Call Flake 8 before write .py
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_max_line_length=99
-let g:flake8_ignore="E128,E501,W293"
+let g:flake8_ignore="E128,E501,W293,W404"
 let g:flake8_builtins="_,apply"
 
+" NERDTREE
+inoremap `` <ESC>:NERDTreeToggle<CR>
+nnoremap `` :NERDTreeToggle<CR>
+
+" NERDComment
+inoremap ~~ |NERDComToggleComment|
+noremap ~~ |NERDComToggleComment|
