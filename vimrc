@@ -110,7 +110,7 @@ noremap _ :ls<CR>:b
 
 " noremap dos :e ++ff=dos<CR>:w<CR>
 
-colorscheme base16-monokai
+colorscheme molokai
 
 " set line number color
 highlight LineNr guifg=#666666
@@ -180,3 +180,5 @@ imap ~~      <ESC><plug>NERDCommenterToggle
 nmap ~~      <plug>NERDCommenterToggle
 
 noremap 1§ :ConqueTermSplit bash
+
+" Map Ctrl-c to yank to clipboard
