@@ -1,4 +1,4 @@
-" Start Pathogen
+"Start Pathogen
 execute pathogen#infect()
 
 " Setup standard
@@ -84,9 +84,6 @@ noremap <C-h> <C-w>h
 
 " move to end of line
 noremap - <End>
-
-" write out
-noremap wq :wq
 
 " invert tab in insert mode
 imap <S-Tab> <Esc><<i
@@ -185,4 +182,14 @@ nmap ~~      <plug>NERDCommenterToggle
 
 noremap 1§ :ConqueTermSplit bash
 
-" Map Ctrl-c to yank to clipboard
+" Yank to clipboard
+xmap <C-c> "+y
+
+" Save Ctrl-c
+inoremap <C-s> <esc>:w<cr>
+nnoremap <C-s> :w<cr>
+
+"Command-T listings
+"Set dir to current dir
+"set autochdir
+set wildignore+=*.pyc
