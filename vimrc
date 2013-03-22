@@ -102,6 +102,8 @@ noremap <C-S> :%s/\s\+$//g<CR>:w<CR>
 " Swap ; and :  Convenient.
 nnoremap ; :
 nnoremap : ;
+inoremap ; :
+inoremap : ;
 
 noremap _ :ls<CR>:b
 
@@ -131,7 +133,7 @@ let Tlist_Use_SingleClick = 1
 let Tlist_Show_One_File = 1
 let Tlist_Inc_Winwidth = 0
 let Tlist_Ctags_Cmd = "ctags"
-nnoremap § :TlistToggle<cr>
+nnoremap ~~  :TlistToggle<cr>
 "}}}
 
 let NERDTreeIgnore = ['\.pyc$']
@@ -177,8 +179,8 @@ inoremap `` <ESC>:NERDTreeToggle<CR>
 nnoremap `` :NERDTreeToggle<CR>
 
 " NERDComment
-imap ~~      <ESC><plug>NERDCommenterToggle
-nmap ~~      <plug>NERDCommenterToggle
+imap §      <ESC><plug>NERDCommenterToggle
+nmap §      <plug>NERDCommenterToggle
 
 noremap 1§ :ConqueTermSplit bash
 
@@ -193,3 +195,9 @@ nnoremap <C-s> :w<cr>
 "Set dir to current dir
 "set autochdir
 set wildignore+=*.pyc
+
+"Folding
+"au BufWinLeave * mkview
+"au BufWinEnter * silent loadview
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
