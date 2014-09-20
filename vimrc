@@ -102,8 +102,8 @@ noremap <C-S> :%s/\s\+$//g<CR>:w<CR>
 " Swap ; and :  Convenient.
 nnoremap ; :
 nnoremap : ;
-inoremap ; :
-inoremap : ;
+" inoremap ; :
+" inoremap : ;
 
 noremap _ :ls<CR>:b
 
@@ -160,7 +160,7 @@ let g:dwm_map_keys=0
 set expandtab
 set novisualbell
 
-set guifont=Monospace\ 8
+"set guifont=Monospace\ 8
 
 " disable arrow keys in insert mode
 inoremap <Left>  <NOP>
@@ -201,3 +201,24 @@ set wildignore+=*.pyc
 "au BufWinEnter * silent loadview
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
+
+" Paste mode
+set paste
+
+" Set Vim file name in tab of iterm
+set t_ts=]1;
+set t_fs=
+
+" sessions
+" save sessions with .vis extension
+map <C-8> :mksession!  session.vis<CR>
+
+" automatically source vim sessions so I can open them with the finder
+au BufRead *.vis so %
+
+" set syntax for phtml files
+syntax on
+filetype on
+au BufNewFile,BufRead *.phtml set filetype=html
+au BufNewFile,BufRead *.scss set filetype=css
+
