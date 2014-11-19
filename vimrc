@@ -174,10 +174,6 @@ let g:flake8_max_line_length=99
 let g:flake8_ignore="E128,E501,W293,W404"
 let g:flake8_builtins="_,apply"
 
-" NERDTREE
-inoremap `` <ESC>:NERDTreeToggle<CR>
-nnoremap `` :NERDTreeToggle<CR>
-
 " NERDComment
 imap §      <ESC><plug>NERDCommenterToggle
 nmap §      <plug>NERDCommenterToggle
@@ -203,7 +199,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 vnoremap <Space> zf
 
 " Paste mode
-set paste
+set pastetoggle=<F6>
 
 " Set Vim file name in tab of iterm
 set t_ts=]1;
@@ -220,5 +216,50 @@ au BufRead *.vis so %
 syntax on
 filetype on
 au BufNewFile,BufRead *.phtml set filetype=html
-au BufNewFile,BufRead *.scss set filetype=css
+au BufNewFile,BufRead *.scss set filetype=cgji
 
+imap jj <Esc>
+
+" make mouse scrolling work in terminal vim!
+map <M-Esc>[62~ <ScrollWheelUp>
+map <M-Esc>[63~ <ScrollWheelDown>
+map <M-Esc>[64~ <S-ScrollWheelUp>
+map <M-Esc>[65~ <S-ScrollWheelDown>
+map! <M-Esc>[62~ <ScrollWheelUp>
+map! <M-Esc>[63~ <ScrollWheelDown>
+map! <M-Esc>[64~ <S-ScrollWheelUp>
+map! <M-Esc>[65~ <S-ScrollWheelDown>
+
+" make external keypad work in terminal vim OSX!
+map <Esc>Oq 1
+map <Esc>Or 2
+map <Esc>Os 3
+map <Esc>Ot 4
+map <Esc>Ou 5
+map <Esc>Ov 6
+map <Esc>Ow 7
+map <Esc>Ox 8
+map <Esc>Oy 9
+map <Esc>Op 0
+map <Esc>On .
+map <Esc>OQ /
+map <Esc>OR *
+map <kPlus> +
+map <Esc>OS -
+map <Esc>OM <CR>
+map! <Esc>Oq 1
+map! <Esc>Or 2
+map! <Esc>Os 3
+map! <Esc>Ot 4
+map! <Esc>Ou 5
+map! <Esc>Ov 6
+map! <Esc>Ow 7
+map! <Esc>Ox 8
+map! <Esc>Oy 9
+map! <Esc>Op 0
+map! <Esc>On .
+map! <Esc>OQ /
+map! <Esc>OR *
+map! <kPlus> +
+map! <Esc>OS -
+map! <Esc>OM <CR>
