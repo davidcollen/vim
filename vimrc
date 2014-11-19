@@ -8,9 +8,6 @@ Bundle 'vim-scripts/closetag.vim'
 Bundle 'scrooloose/nerdcommenter'
 
 
-"Start Pathogen
-execute pathogen#infect()
-
 " Setup standard
 filetype plugin indent on
 
