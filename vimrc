@@ -1,15 +1,20 @@
 " Required Vundle setup
- filetype off
- set runtimepath+=~/.vim/bundle/vundle
- call vundle#rc()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()"
 "
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/closetag.vim'
-Bundle 'scrooloose/nerdcommenter'
+"" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
+Plugin 'vim-scripts/closetag.vim'
+Plugin 'scrooloose/nerdcommenter'
 
-" Setup standard
-filetype plugin indent on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 
 " set our tabs to four spaces
 set smartindent
