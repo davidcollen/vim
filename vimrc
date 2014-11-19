@@ -1,3 +1,13 @@
+" Required Vundle setup
+ filetype off
+ set runtimepath+=~/.vim/bundle/vundle
+ call vundle#rc()
+"
+Bundle 'gmarik/vundle'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'scrooloose/nerdcommenter'
+
+
 "Start Pathogen
 execute pathogen#infect()
 
