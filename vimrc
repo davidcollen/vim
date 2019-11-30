@@ -10,11 +10,17 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set background=dark
+" solarized options
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+" colorscheme solarized
 
 " set our tabs to four spaces
 set smartindent
@@ -75,6 +81,10 @@ set shell=bash\ --login
 " allow tab completion of buffers
 set wildchar=<Tab> wildmenu wildmode=full
 
+" allow w!! to sudo write
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 " Create Blank Newlines and stay in Normal mode
 nnoremap <silent> zj o<Esc>
 nnoremap <silent> zk O<Esc>
@@ -121,11 +131,11 @@ noremap _ :ls<CR>:b
 
 " noremap dos :e ++ff=dos<CR>:w<CR>
 
-colorscheme molokai
+ colorscheme molokai
 
 " set line number color
-highlight LineNr guifg=#666666
-highlight ColorColumn ctermbg=darkgrey guibg=#2f2f2f
+ highlight LineNr guifg=#666666
+ highlight ColorColumn ctermbg=darkgrey guibg=#2f2f2f
 
 if exists("&colorcolumn")
     set colorcolumn=79
